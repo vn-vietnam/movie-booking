@@ -150,16 +150,7 @@ const Booking = () => {
 													subitem.selected ? { color: "green" } : {},
 												]}
 												size={20}
-												// style={{ marginRight: 8 }}
 											/>
-											{/* <CustomIcon
-												name="seat"
-												style={[
-													styles.seatIcon,
-													subitem.taken ? { color: 'grey' } : {},
-													subitem.selected ? { color: 'orange' } : {},
-												]}
-											/> */}
 										</TouchableOpacity>
 									);
 								})}
@@ -169,39 +160,17 @@ const Booking = () => {
 				</View>
 				<View style={styles.seatRadioContainer}>
 					<View style={styles.radioContainer}>
-						{/* <CustomIcon name="radio" style={styles.radioIcon} /> */}
-						<MaterialIcons
-							name="chair"
-							// color="red"
-							size={20}
-							// style={{ marginRight: 8 }}
-						/>
+						<MaterialIcons name="chair" size={20} />
 						<Text style={styles.radioText}>Available</Text>
 					</View>
 					<View style={styles.radioContainer}>
-						<MaterialIcons
-							name="chair"
-							color="red"
-							size={20}
-							// style={{ marginRight: 8 }}
-						/>
-						{/* <CustomIcon
-							name="radio"
-							style={[styles.radioIcon, { color: COLORS.Grey }]}
-						/> */}
+						<MaterialIcons name="chair" color="red" size={20} />
+
 						<Text style={styles.radioText}>Taken</Text>
 					</View>
 					<View style={styles.radioContainer}>
-						<MaterialIcons
-							name="chair"
-							color="green"
-							size={20}
-							// style={{ marginRight: 8 }}
-						/>
-						{/* <CustomIcon
-							name="radio"
-							style={[styles.radioIcon, { color: COLORS.Orange }]}
-						/> */}
+						<MaterialIcons name="chair" color="green" size={20} />
+
 						<Text style={styles.radioText}>Selected</Text>
 					</View>
 				</View>
@@ -226,7 +195,7 @@ const Booking = () => {
 											? { marginRight: 24 }
 											: {},
 										index == selectedDateIndex
-											? { backgroundColor: "orange" }
+											? { backgroundColor: "red" }
 											: {},
 									]}
 								>
@@ -252,13 +221,9 @@ const Booking = () => {
 								<View
 									style={[
 										styles.timeContainer,
-										index == 0
-											? { marginLeft: 24 }
-											: index == dateArray.length - 1
-											? { marginRight: 24 }
-											: {},
+										// index == 0 ? {} : index == dateArray.length - 1 ? {backgroundColor: "yellow" } : {},
 										index == selectedTimeIndex
-											? { backgroundColor: "orange" }
+											? { backgroundColor: "red" }
 											: {},
 									]}
 								>
@@ -348,9 +313,9 @@ const styles = StyleSheet.create({
 		width: 10 * 7,
 		height: 10 * 10,
 		borderRadius: 10 * 10,
-		//   backgroundColor: COLORS.DarkGrey,
 		alignItems: "center",
 		justifyContent: "center",
+		marginBottom: 10
 	},
 	dateText: {
 		// //   fontFamily: FONTFAMILY.poppins_medium,
@@ -366,19 +331,21 @@ const styles = StyleSheet.create({
 		marginVertical: 24,
 	},
 	timeContainer: {
-		paddingVertical: 10,
+	
 		borderWidth: 1,
-		//   borderColor: COLORS.WhiteRGBA50,
-		paddingHorizontal: 20,
+	
+		marginBottom: 10,
 		borderRadius: 25,
-		//   backgroundColor: COLORS.DarkGrey,
 		alignItems: "center",
 		justifyContent: "center",
 	},
 	timeText: {
-		// //   fontFamily: FONTFAMILY.poppins_regular,
+		borderColor: "red",
+		borderWidth: 1,
 		fontSize: 14,
-		//   color: COLORS.White,
+		borderRadius: 25,
+		paddingHorizontal: 24,
+		paddingVertical: 10,
 	},
 	buttonPriceContainer: {
 		flexDirection: "row",
@@ -404,6 +371,8 @@ const styles = StyleSheet.create({
 		borderRadius: 25,
 		paddingHorizontal: 24,
 		paddingVertical: 10,
+		borderColor: "red",
+		borderWidth: 1,
 		// //   fontFamily: FONTFAMILY.poppins_semibold,
 		fontSize: 16,
 		//   color: COLORS.White,

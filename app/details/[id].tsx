@@ -46,11 +46,8 @@ const MovieDetail = () => {
 		if (movieData) {
 			setLoading(false);
 		}
-	}, [movieData]);
-	// console.log(movieData);
-	// if (loading) {
-	// 	return <Loading />;
-	// }
+	}, [movieData, loading]);
+
 	useLayoutEffect(() => {
 		navigation.setOptions({
 			headerTitle: "",
@@ -60,15 +57,13 @@ const MovieDetail = () => {
 	if (loading) {
 		return <Loading />;
 	}
-	// console.log(baseImagePath("w780", movieData?.backdrop_path))
+
 	return (
 		<ScrollView
 			style={styles.container}
 			bounces={false}
 			showsVerticalScrollIndicator={false}
 		>
-			{/* <StatusBar hidden /> */}
-
 			<View>
 				<ImageBackground
 					source={{
@@ -165,14 +160,16 @@ const MovieDetail = () => {
 					<TouchableOpacity
 						style={styles.buttonBG}
 						onPress={() => {
-						
 							router.navigate({
 								pathname: `/seatBooking/${id}`,
 								params: {
 									// movieId: id,
 									// test: "fdf",
 									BgImage: baseImagePath("w780", movieData?.backdrop_path),
-									PosterImage: baseImagePath("original", movieData?.poster_path),
+									PosterImage: baseImagePath(
+										"original",
+										movieData?.poster_path
+									),
 								},
 							} as any);
 						}}
@@ -188,7 +185,6 @@ const styles = StyleSheet.create({
 	container: {
 		display: "flex",
 		flex: 1,
-		//   backgroundColor: COLORS.Black,
 	},
 	loadingContainer: {
 		flex: 1,
@@ -219,7 +215,7 @@ const styles = StyleSheet.create({
 	},
 	clockIcon: {
 		fontSize: 20,
-		//   color: COLORS.WhiteRGBA50,
+
 		marginRight: 8,
 	},
 	timeContainer: {
@@ -230,14 +226,11 @@ const styles = StyleSheet.create({
 		paddingTop: 15,
 	},
 	runtimeText: {
-		//   fontFamily: FONTFAMILY.poppins_medium,
 		fontSize: 14,
-		//   color: COLORS.White,
 	},
 	title: {
-		//   fontFamily: FONTFAMILY.poppins_regular,
 		fontSize: 24,
-		//   color: COLORS.White,
+
 		marginHorizontal: 36,
 		marginVertical: 15,
 		textAlign: "center",
@@ -250,22 +243,19 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 	genreBox: {
-		//   borderColor: COLORS.WhiteRGBA50,
+		borderColor: "red",
 		borderWidth: 1,
 		paddingHorizontal: 10,
 		paddingVertical: 4,
 		borderRadius: 25,
 	},
 	genreText: {
-		//   fontFamily: FONTFAMILY.poppins_regular,
 		fontSize: 10,
-		//   color: COLORS.WhiteRGBA75,
 	},
 	tagline: {
-		//   fontFamily: FONTFAMILY.poppins_thin,
 		fontSize: 14,
 		fontStyle: "italic",
-		//   color: COLORS.White,
+
 		marginHorizontal: 36,
 		marginVertical: 15,
 		textAlign: "center",
@@ -281,16 +271,14 @@ const styles = StyleSheet.create({
 	},
 	starIcon: {
 		fontSize: 20,
-		//   color: COLORS.Yellow,
 	},
 	descriptionText: {
-		//   fontFamily: FONTFAMILY.poppins_light,
 		marginTop: 24,
 		fontSize: 14,
-		//   color: COLORS.White,
 	},
 	containerGap24: {
 		gap: 24,
+		paddingBottom: 10,
 	},
 	buttonBG: {
 		alignItems: "center",
@@ -301,11 +289,9 @@ const styles = StyleSheet.create({
 		paddingHorizontal: 24,
 		paddingVertical: 10,
 		backgroundColor: "red",
-		color: "black",
-		//   backgroundColor: COLORS.Orange,
-		//   fontFamily: FONTFAMILY.poppins_medium,
+		color: "white",
+
 		fontSize: 14,
-		//   color: COLORS.White,
 	},
 });
 export default MovieDetail;

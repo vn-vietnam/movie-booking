@@ -4,6 +4,8 @@ import { useLocalSearchParams, useNavigation } from "expo-router";
 import { Image, ImageBackground } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { generateDate, generateSeats, timeArray } from "@/hooks/bookingHooks";
+import { MaterialIcons } from "@expo/vector-icons";
+import { DarkTheme } from "@react-navigation/native";
 
 const Ticket = () => {
 	const ticketData = useLocalSearchParams();
@@ -43,7 +45,7 @@ const Ticket = () => {
 						></View>
 					</LinearGradient>
 				</ImageBackground>
-				<View style={styles.ticketFooter}>
+				<View style={styles.ticketFooter  } >
 					<Image
 						source={require("@/assets/images/barcode.png")}
 						style={styles.barcodeImage}
@@ -70,21 +72,18 @@ const Ticket = () => {
 							</Text>
 						</View>
 						<View style={styles.subtitleContainer}>
-							{/* <CustomIcon name="clock" style={styles.clockIcon} /> */}
+							<MaterialIcons
+								name="access-time"
+								size={30}
+								style={{ paddingBottom: 5 }}
+							/>
+
 							<Text style={styles.subtitle}>
 								{timeArray[Number(ticketData?.time)]}
 							</Text>
 						</View>
 					</View>
 					<View style={styles.ticketSeatContainer}>
-						{/* <View style={styles.subtitleContainer}>
-							<Text style={styles.subheading}>Hall</Text>
-							<Text style={styles.subtitle}>02</Text>
-						</View>
-						<View style={styles.subtitleContainer}>
-							<Text style={styles.subheading}>Row</Text>
-							<Text style={styles.subtitle}>04</Text>
-						</View> */}
 						<View style={styles.subtitleContainer}>
 							<Text style={styles.subheading}>Seats</Text>
 							<Text style={styles.subtitle}>
@@ -126,15 +125,15 @@ const styles = StyleSheet.create({
 		height: "70%",
 	},
 	linear: {
-		//   borderTopColor: COLORS.Black,
+		  borderTopColor: 'black',
 		borderTopWidth: 3,
 		width: 300,
 		alignSelf: "center",
-		//   backgroundColor: COLORS.Orange,
+		  backgroundColor: 'orange',
 		borderStyle: "dashed",
 	},
 	ticketFooter: {
-		//   backgroundColor: COLORS.Orange,
+		backgroundColor: 'green',
 		width: 300,
 		alignItems: "center",
 		paddingBottom: 36,

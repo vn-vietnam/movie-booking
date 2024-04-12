@@ -52,17 +52,21 @@ export default function TabOneScreen() {
 			setUpcomingMoviesList(tempUpcoming.results);
 		})();
 	}, []);
-	// console.log(nowPlayingMoviesList);
-	if (
-		nowPlayingMoviesList == undefined &&
-		nowPlayingMoviesList == null &&
-		popularMoviesList == undefined &&
-		popularMoviesList == null &&
-		upcomingMoviesList == undefined &&
-		upcomingMoviesList == null
-	) {
-		return  <Loading/>;
-	}
+
+	useEffect(() => {
+		(async () => {
+			if (
+				nowPlayingMoviesList == undefined &&
+				nowPlayingMoviesList == null &&
+				popularMoviesList == undefined &&
+				popularMoviesList == null &&
+				upcomingMoviesList == undefined &&
+				upcomingMoviesList == null
+			) {
+				return <Loading />;
+			}
+		})();
+	}, [nowPlayingMoviesList, popularMoviesList, upcomingMoviesList]);
 
 	return (
 		<SafeAreaView style={styles.container}>

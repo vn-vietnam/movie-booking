@@ -7,6 +7,7 @@ const CategoryHeader = (props: any) => {
 
 const styles = StyleSheet.create({
 	text: {
+		fontWeight: 'bold',
 		fontSize: 20,
 		paddingHorizontal: 36,
 		paddingVertical: 28,
