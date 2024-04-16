@@ -41,7 +41,7 @@ export default function Notification() {
 					</View>
 				))}
 
-				{/* <EditScreenInfo path="app/(tabs)/two.tsx" /> */}
+			
 			</ScrollView>
 		</SafeAreaView>
 	);
@@ -53,8 +53,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		marginHorizontal: 20,
 		marginVertical: 30,
-		// alignItems: "center",
-		// justifyContent: "center",
+
 	},
 	title: {
 		fontSize: 20,

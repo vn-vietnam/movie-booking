@@ -16,7 +16,6 @@ import * as SecureStore from "expo-secure-store";
 import { generateDate, generateSeats, timeArray } from "@/hooks/bookingHooks";
 
 const Booking = () => {
-	// const { BgImage } = props?.route?.params;
 	const param = useLocalSearchParams();
 	// console.log(param);
 	const navigation = useNavigation();
@@ -105,13 +104,7 @@ const Booking = () => {
 						colors={["rgba(0,0,0,0)", "transparent"]}
 						style={styles.linearGradient}
 					>
-						<View style={styles.appHeaderContainer}>
-							{/* <AppHeader
-								name="close"
-								header={""}
-								action={() => navigation.goBack()}
-							/> */}
-						</View>
+						<View style={styles.appHeaderContainer}></View>
 					</LinearGradient>
 				</ImageBackground>
 				<Text
@@ -251,7 +244,6 @@ const styles = StyleSheet.create({
 	container: {
 		display: "flex",
 		flex: 1,
-		//   backgroundColor: COLORS.Black,
 	},
 	ImageBG: {
 		width: "100%",
@@ -266,9 +258,8 @@ const styles = StyleSheet.create({
 	},
 	screenText: {
 		textAlign: "center",
-		//   fontFamily: FONTFAMILY.poppins_regular,
+
 		fontSize: 10,
-		//   color: COLORS.WhiteRGBA15,
 	},
 	seatContainer: {
 		marginVertical: 20,
@@ -283,7 +274,6 @@ const styles = StyleSheet.create({
 	},
 	seatIcon: {
 		fontSize: 24,
-		//   color: COLORS.White,
 	},
 	seatRadioContainer: {
 		flexDirection: "row",
@@ -299,12 +289,9 @@ const styles = StyleSheet.create({
 	},
 	radioIcon: {
 		fontSize: 20,
-		//   color: COLORS.White,
 	},
 	radioText: {
-		// //   fontFamily: FONTFAMILY.poppins_medium,
 		fontSize: 12,
-		//   color: COLORS.White,
 	},
 	containerGap24: {
 		gap: 24,
@@ -315,25 +302,20 @@ const styles = StyleSheet.create({
 		borderRadius: 10 * 10,
 		alignItems: "center",
 		justifyContent: "center",
-		marginBottom: 10
+		marginBottom: 10,
 	},
 	dateText: {
-		// //   fontFamily: FONTFAMILY.poppins_medium,
 		fontSize: 24,
-		//   color: COLORS.White,
 	},
 	dayText: {
-		// //   fontFamily: FONTFAMILY.poppins_regular,
 		fontSize: 12,
-		//   color: COLORS.White,
 	},
 	OutterContainer: {
 		marginVertical: 24,
 	},
 	timeContainer: {
-	
 		borderWidth: 1,
-	
+
 		marginBottom: 10,
 		borderRadius: 25,
 		alignItems: "center",
@@ -358,14 +340,10 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	totalPriceText: {
-		// //   fontFamily: FONTFAMILY.poppins_regular,
 		fontSize: 14,
-		//   color: COLORS.Grey,
 	},
 	price: {
-		// //   fontFamily: FONTFAMILY.poppins_medium,
 		fontSize: 24,
-		//   color: COLORS.White,
 	},
 	buttonText: {
 		borderRadius: 25,
@@ -373,10 +351,8 @@ const styles = StyleSheet.create({
 		paddingVertical: 10,
 		borderColor: "red",
 		borderWidth: 1,
-		// //   fontFamily: FONTFAMILY.poppins_semibold,
+
 		fontSize: 16,
-		//   color: COLORS.White,
-		//   backgroundColor: COLORS.Orange,
 	},
 });
 export default Booking;

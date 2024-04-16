@@ -1,31 +1,55 @@
-import { View, Text, StyleSheet, Button } from "react-native";
+import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
 import React from "react";
 import { Image } from "expo-image";
 import SettingComponent from "@/components/SettingComponent";
+import { Link, useRouter } from "expo-router";
+import { useAuth, useUser } from "@clerk/clerk-expo";
 
 const User = () => {
-	const user = false;
+	const { signOut, isSignedIn } = useAuth();
+	const { user } = useUser();
+	const router = useRouter();
+	const handleLogout = () => {
+		signOut();
+	};
+	const handleLogin = () => {
+		router.push("/(modals)/login");
+	};
 	if (!user) {
 		return (
-			<View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-				<Button title="Login" />
+			<View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+				<TouchableOpacity
+					style={{
+						backgroundColor: "#fff",
+						borderWidth: 1,
+
+						height: 50,
+						borderRadius: 8,
+						alignItems: "center",
+						justifyContent: "center",
+						flexDirection: "row",
+						paddingHorizontal: 10,
+					}}
+					onPress={handleLogin}
+				>
+					<Text style={{ color: "black", fontWeight: "bold", fontSize: 16 }}>
+						Log in
+					</Text>
+				</TouchableOpacity>
 			</View>
 		);
 	}
 	return (
 		<View style={styles.container}>
 			<View style={styles.profileContainer}>
-				<Image
-					source={require("@/assets/images/icon.png")}
-					style={styles.avatarImage}
-				/>
-				{/* <Text style={styles.avatarText}>{user}</Text> */}
+				<Image source={user?.imageUrl} style={styles.avatarImage} />
+				<Text>{user?.firstName + "" + user?.lastName}</Text>
 			</View>
 
 			<View style={styles.profileContainer}>
 				<SettingComponent
 					icon="user-circle-o"
-					heading="Account"
+					heading={user?.emailAddresses?.[0]?.emailAddress}
 					subheading="Edit Profile"
 					subtitle="Change Password"
 				/>
@@ -41,12 +65,24 @@ const User = () => {
 					subheading="Rating"
 					subtitle="Comment"
 				/>
-				<SettingComponent
-					icon="sign-out"
-					heading="Sign Out"
-					// subheading="About Movies"
-					// subtitle="more"
-				/>
+				<TouchableOpacity
+					style={{
+						backgroundColor: "#fff",
+						borderWidth: 1,
+
+						height: 50,
+						borderRadius: 8,
+						alignItems: "center",
+						justifyContent: "center",
+						flexDirection: "row",
+						paddingHorizontal: 10,
+					}}
+					onPress={handleLogout}
+				>
+					<Text style={{ color: "black", fontWeight: "bold", fontSize: 16 }}>
+						Log out
+					</Text>
+				</TouchableOpacity>
 			</View>
 		</View>
 	);
@@ -55,7 +91,7 @@ const styles = StyleSheet.create({
 	container: {
 		display: "flex",
 		flex: 1,
-		//   backgroundColor: COLORS.Black,
+		marginTop: 40,
 	},
 	appHeaderContainer: {
 		marginHorizontal: 36,
@@ -71,10 +107,8 @@ const styles = StyleSheet.create({
 		borderRadius: 80,
 	},
 	avatarText: {
-		//   fontFamily: FONTFAMILY.poppins_medium,
 		fontSize: 16,
 		marginTop: 16,
-		//   color: COLORS.White,
 	},
 });
 export default User;

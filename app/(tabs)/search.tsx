@@ -45,7 +45,7 @@ const Search = () => {
 							style={{
 								width: 200,
 								height: 200,
-								// backgroundColor: "#eee",
+							
 							}}
 							source={require("../../assets/animations/loading.json")}
 						/>
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		width,
 		alignItems: "center",
-		//   backgroundColor: COLORS.Black,
+
 	},
 	InputHeaderContainer: {
 		display: "flex",

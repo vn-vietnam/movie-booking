@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 	iconStyle: {
-		// color: COLORS.White,
+		
 		fontSize: 24,
 		paddingHorizontal: 20,
 	},
@@ -37,13 +37,13 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 	title: {
-		// fontFamily: FONTFAMILY.poppins_medium,
+		
 		fontSize: 18,
-		// color: COLORS.White,
+		
 	},
 	subtitle: {
-		// fontFamily: FONTFAMILY.poppins_regular,
+		
 		fontSize: 14,
-		// color: COLORS.WhiteRGBA15,
+		
 	},
 });

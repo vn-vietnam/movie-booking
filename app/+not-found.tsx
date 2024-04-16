@@ -15,7 +15,6 @@ export default function NotFoundScreen() {
 					style={{
 						width: 200,
 						height: 200,
-						// backgroundColor: "#eee",
 					}}
 					source={require("../assets/animations/404.json")}
 				/>

@@ -40,16 +40,16 @@ const styles = StyleSheet.create({
 	container: {
 		display: "flex",
 		flex: 1,
-		// backgroundColor: COLORS.Black,
+		
 	},
 	cardImage: {
 		aspectRatio: 2 / 3,
 		borderRadius: 20,
 	},
 	textTitle: {
-		// fontFamily: FONTFAMILY.poppins_regular,
+		
 		fontSize: 14,
-		// color: COLORS.White,
+	
 		textAlign: "center",
 		paddingVertical: 10,
 	},

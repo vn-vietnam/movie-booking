@@ -21,7 +21,7 @@ export default function TabLayout() {
 	return (
 		<Tabs
 			screenOptions={{
-				tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+				tabBarActiveTintColor: Colors.light.tint,
 				headerShown: false,
 			}}
 		>
@@ -35,7 +35,7 @@ export default function TabLayout() {
 			<Tabs.Screen
 				name="notification"
 				options={{
-					title: "Notification",
+					title: "News",
 					tabBarIcon: ({ color }) => <TabBarIcon name="bell-o" color={color} />,
 				}}
 			/>

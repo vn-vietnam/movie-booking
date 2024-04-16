@@ -45,7 +45,7 @@ const Ticket = () => {
 						></View>
 					</LinearGradient>
 				</ImageBackground>
-				<View style={styles.ticketFooter  } >
+				<View style={styles.ticketFooter}>
 					<Image
 						source={require("@/assets/images/barcode.png")}
 						style={styles.barcodeImage}
@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
 	container: {
 		display: "flex",
 		flex: 1,
-		//   backgroundColor: COLORS.Black,
 	},
 	appHeaderContainer: {
 		marginHorizontal: 36,
@@ -125,15 +124,15 @@ const styles = StyleSheet.create({
 		height: "70%",
 	},
 	linear: {
-		  borderTopColor: 'black',
+		borderTopColor: "black",
 		borderTopWidth: 3,
 		width: 300,
 		alignSelf: "center",
-		  backgroundColor: 'orange',
+		backgroundColor: "orange",
 		borderStyle: "dashed",
 	},
 	ticketFooter: {
-		backgroundColor: 'green',
+		backgroundColor: "green",
 		width: 300,
 		alignItems: "center",
 		paddingBottom: 36,
@@ -156,26 +155,20 @@ const styles = StyleSheet.create({
 		marginVertical: 10,
 	},
 	dateTitle: {
-		//   fontFamily: FONTFAMILY.poppins_medium,
 		fontSize: 24,
-		//   color: COLORS.White,
 	},
 	subtitle: {
-		// //   fontFamily: FONTFAMILY.poppins_regular,
 		fontSize: 14,
-		//   color: COLORS.White,
 	},
 	subheading: {
-		// //   fontFamily: FONTFAMILY.poppins_medium,
 		fontSize: 18,
-		//   color: COLORS.White,
 	},
 	subtitleContainer: {
 		alignItems: "center",
 	},
 	clockIcon: {
 		fontSize: 24,
-		//   color: COLORS.White,
+
 		paddingBottom: 10,
 	},
 	barcodeImage: {
@@ -186,7 +179,6 @@ const styles = StyleSheet.create({
 		height: 80,
 		width: 80,
 		borderRadius: 80,
-		//   backgroundColor: COLORS.Black,
 	},
 });
 export default Ticket;

@@ -39,15 +39,15 @@ const styles = StyleSheet.create({
 	},
 	title: {
 		alignSelf: "stretch",
-		// fontFamily: FONTFAMILY.poppins_medium,
+	
 		fontSize: 12,
-		// color: COLORS.White,
+		
 	},
 	subtitle: {
 		alignSelf: "stretch",
-		// fontFamily: FONTFAMILY.poppins_medium,
+	
 		fontSize: 10,
-		// color: COLORS.White,
+		
 	},
 });
 export default CastCard;

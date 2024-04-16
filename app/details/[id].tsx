@@ -11,12 +11,12 @@ import {
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { getMovieCastDetails, getMovieDetails } from "@/hooks/callApi";
 import {
-	usePathname,
+
 	useNavigation,
 	useGlobalSearchParams,
 	useRouter,
 } from "expo-router";
-import Error from "@/components/Error";
+
 import { baseImagePath } from "../api/api";
 import { LinearGradient } from "expo-linear-gradient";
 import CategoryHeader from "@/components/CategoryHeader";
@@ -92,7 +92,7 @@ const MovieDetail = () => {
 					size={20}
 					style={{ marginRight: 8 }}
 				/>
-				{/* <CustomIcon name="clock" style={styles.clockIcon} /> */}
+			
 				<Text style={styles.runtimeText}>
 					{Math.floor(movieData?.runtime / 60)}h{" "}
 					{Math.floor(movieData?.runtime % 60)}m
@@ -115,7 +115,7 @@ const MovieDetail = () => {
 
 			<View style={styles.infoContainer}>
 				<View style={styles.rateContainer}>
-					{/* <CustomIcon name="star" style={styles.starIcon} /> */}
+				
 					<View style={{ flex: 1, flexDirection: "row", gap: 8 }}>
 						<FontAwesome name="star" color="yellow" size={20} style={{}} />
 						<Text style={styles.runtimeText}>
@@ -163,8 +163,7 @@ const MovieDetail = () => {
 							router.navigate({
 								pathname: `/seatBooking/${id}`,
 								params: {
-									// movieId: id,
-									// test: "fdf",
+									
 									BgImage: baseImagePath("w780", movieData?.backdrop_path),
 									PosterImage: baseImagePath(
 										"original",

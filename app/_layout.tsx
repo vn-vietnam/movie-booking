@@ -10,6 +10,8 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 
 import { useColorScheme } from "@/components/useColorScheme";
+import { ClerkProvider } from "@clerk/clerk-expo";
+import * as SecureStore from "expo-secure-store";
 
 export {
 	// Catch any errors thrown by the Layout component.
@@ -23,6 +25,25 @@ export const unstable_settings = {
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
+
+const EXPO_CLERK = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
+// Cache the Clerk JWT
+const tokenCache = {
+	async getToken(key: string) {
+		try {
+			return SecureStore.getItemAsync(key);
+		} catch (err) {
+			return null;
+		}
+	},
+	async saveToken(key: string, value: string) {
+		try {
+			return SecureStore.setItemAsync(key, value);
+		} catch (err) {
+			return;
+		}
+	},
+};
 
 export default function RootLayout() {
 	const [loaded, error] = useFonts({
@@ -45,7 +66,11 @@ export default function RootLayout() {
 		return null;
 	}
 
-	return <RootLayoutNav />;
+	return (
+		<ClerkProvider publishableKey={EXPO_CLERK!} tokenCache={tokenCache}>
+			<RootLayoutNav />
+		</ClerkProvider>
+	);
 }
 
 function RootLayoutNav() {
@@ -55,12 +80,6 @@ function RootLayoutNav() {
 		<ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
 			<Stack>
 				<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-				{/* <Stack.Screen name="details/[id]" options={{ headerShown: false }} />
-				<Stack.Screen
-					name="seatBooking/[id]"
-					options={{ headerShown: false }}
-				/> */}
-				{/* <Stack.Screen name="(modals)/index" options={{ presentation: "modal" }} /> */}
 			</Stack>
 		</ThemeProvider>
 	);

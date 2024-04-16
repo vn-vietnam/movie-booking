@@ -79,16 +79,16 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flex: 1,
-    // backgroundColor: 'black',
+  
   },
   cardImage: {
     aspectRatio: 2 / 3,
     borderRadius: 20,
   },
   textTitle: {
-    // fontFamily: FONTFAMILY.poppins_regular,
+
     fontSize: 24,
-    // color: COLORS.White,
+  
     textAlign: 'center',
     paddingVertical: 10,
   },
@@ -101,12 +101,12 @@ const styles = StyleSheet.create({
   },
   starIcon: {
     fontSize: 20,
-    // color: COLORS.Yellow,
+  
   },
   voteText: {
-    // fontFamily: FONTFAMILY.poppins_medium,
+  
     fontSize: 14,
-    // color: COLORS.White,
+  
   },
   genreContainer: {
     flex: 1,
