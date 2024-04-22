@@ -8,6 +8,7 @@
 ![clerk](https://img.shields.io/badge/Clerk-black?logo=clerk)
 
 <!-- ![Background Image](./assets/images/screens/1.jpg) -->
+<<<<<<< HEAD
 
 ## Screenshots
 
@@ -26,6 +27,21 @@
   <img src="./assets/images/screens/9.jpg" width="200"  />
 </p>
 </details>
+=======
+<p float="left">
+<img src="./assets/images/screens/1.jpg" width="200px" alt="Logo" >
+<img src="./assets/images/screens/2.jpg" width="200px" alt="Logo" >
+<img src="./assets/images/screens/3.jpg" width="200px" alt="Logo" >
+<img src="./assets/images/screens/4.jpg" width="200px" alt="Logo" >
+</p>
+<p float="left">
+<img src="./assets/images/screens/5.jpg" width="200px" alt="Logo" >
+<img src="./assets/images/screens/6.jpg" width="200px" alt="Logo" >
+<img src="./assets/images/screens/7.jpg" width="200px" alt="Logo" >
+<img src="./assets/images/screens/8.jpg" width="200px" alt="Logo" >
+<img src="./assets/images/screens/9.jpg" width="200px" alt="Logo" >
+</p>
+>>>>>>> 8fd88e48ee4105c4db72b15dda3243f2f06ff69d
 
 ## Table of Contents
 
