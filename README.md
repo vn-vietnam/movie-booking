@@ -8,15 +8,24 @@
 ![clerk](https://img.shields.io/badge/Clerk-black?logo=clerk)
 
 <!-- ![Background Image](./assets/images/screens/1.jpg) -->
-<img src="./assets/images/screens/1.jpg" width="200px" alt="Logo" >
-<img src="./assets/images/screens/2.jpg" width="200px" alt="Logo" >
-<img src="./assets/images/screens/3.jpg" width="200px" alt="Logo" >
-<img src="./assets/images/screens/4.jpg" width="200px" alt="Logo" >
-<img src="./assets/images/screens/5.jpg" width="200px" alt="Logo" >
-<img src="./assets/images/screens/6.jpg" width="200px" alt="Logo" >
-<img src="./assets/images/screens/7.jpg" width="200px" alt="Logo" >
-<img src="./assets/images/screens/8.jpg" width="200px" alt="Logo" >
-<img src="./assets/images/screens/9.jpg" width="200px" alt="Logo" >
+
+## Screenshots
+
+<details>
+	<summary>View screenshots</summary>
+<p align="left">
+  <img src="./assets/images/screens/1.jpg" width="200"  />
+  <img src="./assets/images/screens/2.jpg" width="200"  />
+  <img src="./assets/images/screens/3.jpg" width="200"  />
+  <img src="./assets/images/screens/4.jpg" width="200"  />
+  <img src="./assets/images/screens/5.jpg" width="200"  />
+  <img src="./assets/images/screens/6.jpg" width="200"  />
+  <img src="./assets/images/screens/6.jpg" width="200"  />
+  <img src="./assets/images/screens/7.jpg" width="200"  />
+  <img src="./assets/images/screens/8.jpg" width="200"  />
+  <img src="./assets/images/screens/9.jpg" width="200"  />
+</p>
+</details>
 
 ## Table of Contents
 
@@ -30,13 +39,13 @@
 
 ## Introduction
 
-- Mobile app book movie online
+- Ticket Movie is a booking ticket platform for you so you buy ticket online and get the events and news movie.
 
 ## Features
 
 - Book Movies Conveniently and Quickly:
   - Dark and Light Mode
-  - Using database Movies from [TMDB](https://www.themoviedb.org) and fetch data 
+  - Using database Movies from [TMDB](https://www.themoviedb.org) and fetch data
   - Choose movie and ticket
   - Select day, time of movie
   - Print QR code for ticket

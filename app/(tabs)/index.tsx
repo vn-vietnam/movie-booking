@@ -33,41 +33,34 @@ export default function TabOneScreen() {
 		useState<any>(undefined);
 	const [popularMoviesList, setPopularMoviesList] = useState<any>(undefined);
 	const [upcomingMoviesList, setUpcomingMoviesList] = useState<any>(undefined);
+	const [loading, setLoading] = useState(true);
 	const searchMoviesFunction = () => {
 		router.navigate("search");
 	};
 	useEffect(() => {
 		(async () => {
-			let tempNowPlaying = await getNowPlayingMoviesList();
-			setNowPlayingMoviesList([
-				// { id: "dummy1" },
-				...tempNowPlaying.results,
-				// { id: "dummy2" },
-			]);
+			try {
+				let tempNowPlaying = await getNowPlayingMoviesList();
+				setNowPlayingMoviesList([...tempNowPlaying.results]);
 
-			let tempPopular = await getPopularMoviesList();
-			setPopularMoviesList(tempPopular.results);
+				let tempPopular = await getPopularMoviesList();
+				setPopularMoviesList(tempPopular.results);
 
-			let tempUpcoming = await getUpcomingMoviesList();
-			setUpcomingMoviesList(tempUpcoming.results);
+				let tempUpcoming = await getUpcomingMoviesList();
+				setUpcomingMoviesList(tempUpcoming.results);
+				setLoading(false);
+			} catch (error) {
+				console.log(error);
+				setLoading(true);
+			}
 		})();
 	}, []);
 
-	useEffect(() => {
-		(async () => {
-			if (
-				nowPlayingMoviesList == undefined &&
-				nowPlayingMoviesList == null &&
-				popularMoviesList == undefined &&
-				popularMoviesList == null &&
-				upcomingMoviesList == undefined &&
-				upcomingMoviesList == null
-			) {
-				return <Loading />;
-			}
-		})();
-	}, [nowPlayingMoviesList, popularMoviesList, upcomingMoviesList]);
+	if (loading) {
+		return <Loading />;
+	}
 
+	// console.log(nowPlayingMoviesList);
 	return (
 		<SafeAreaView style={styles.container}>
 			<ScrollView style={{ flex: 1 }} bounces={false}>
